@@ -1,5 +1,5 @@
 function getMovieData() {
-  const APIKey = "1b66c7913a4b8a373f3a18ed478f32fa";
+  const APIKey = "";
   const posterURL = "https://image.tmdb.org/t/p/w500/";
 
   const input = document.getElementById("user").value;
