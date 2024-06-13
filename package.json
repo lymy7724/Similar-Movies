@@ -1,0 +1,16 @@
+{
+  "name": "similar-movies",
+  "version": "1.0.0",
+  "description": "Continuing journey of learning and expanding knowledge in Node by creating an application that will display a list of movies similar to the one entered by the user",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node": "^22.3.0"
+  }
+}

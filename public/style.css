@@ -1,0 +1,56 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 700px;
+    height: 30px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(68, 129, 228);
+    color: white
+}
+
+#container {
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    color: rgba(28, 27, 25, 0.756);
+    font-size: 25px;
+}
+
+.poster {
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    padding: 10px;
+    background-color: rgba(187, 180, 180, 0.78);
+    border-radius: 15px;
+}
