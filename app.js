@@ -46,16 +46,16 @@ app.get("/", (req, res) => {
         list = list + html;
       }
       res.render("index", { text: list, title: "Trending Movies" });
+      res.end;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => res.render("index", { text: "", title: "" }));
 });
 
 app.post("/", (req, res) => {
   const url = `https://api.themoviedb.org/3/search/movie?query=${req.body.movie}&language=en-US&page=1&api_key=${APIKey}`;
 
   let list = "";
-  let name = "Similar Movies to " + req.body.movie;
-
+  let movieName = "";
   const options = {
     method: "GET",
     headers: {
@@ -69,11 +69,12 @@ app.post("/", (req, res) => {
     .then((response) => {
       const movies = response.results;
       if (movies.length === 0) {
-        console.log("Movie not found!");
+        console.log("Movie Not Found");
       } else {
         // grabs the id of the movie the user searched for and compares it to similar movies
         const movieId = movies[0]["id"];
-        nmae = name + movies[0]["title"];
+        movieName = movies[0]["title"];
+
         fetch(
           `https://api.themoviedb.org/3/movie/${movieId}/similar?language=en-US&page=1&api_key=${APIKey}`,
           options
@@ -81,7 +82,6 @@ app.post("/", (req, res) => {
           .then((response) => response.json())
           .then((response) => {
             const similarmovies = response.results;
-
             // create a for loop that loops 1-8 of similarmovies
             for (let i = 0; i < 8; i++) {
               if (i < similarmovies.length) {
@@ -98,9 +98,11 @@ app.post("/", (req, res) => {
                 list = list + html;
               }
             }
+
+            movieName = "Similar movies to " + movieName;
             res.render("index", {
               text: list,
-              title: name,
+              title: movieName,
             });
           })
           .catch((err) => res.render("index", { text: "Movie Not Found" }));
