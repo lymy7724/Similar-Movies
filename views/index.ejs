@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Similar Movies</title>
+</head>
+<body>
+    
+    <div class="title">
+        <a href="/"><h1>Film Center</h1></a>
+    </div>
+    
+    
+    <div class="search">
+    <form action="/" method="post">
+        <input type="text" id="user" name="movie">
+        <input type="submit" value="Search movies" class="button">
+    </form>
+    </div>
+    <div style="width: 85%; height: 2px; background-color: grey; margin: 20px auto;"></div>
+
+    <h2><%= title %></h2>
+    
+    
+    <div id="container">
+        <%- text %>
+    </div>
+    
+    
+</body>
+
+<script src="script.js"></script>
+</html>
